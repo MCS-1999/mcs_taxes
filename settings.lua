@@ -73,7 +73,7 @@ Settings.Tax = {
         Hour (0 to 23) --  Number 
         Day (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)
     ]] --
-    ['Funds'] = { -- societies that get a percentage of the funds collected. this is out of 100% (i.e 1.0) (this will use vlrp-management)
+    ['Funds'] = { -- societies that get a percentage of the funds collected. this is out of 100% (i.e 1.0) (this will use qb-management)
         ['sahp'] = {
             label = 'San Andreas Highway Patrol',
             take = (math.random(50) / 100)
@@ -95,13 +95,13 @@ Settings.Tax = {
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| Functions
 Settings.Functions.Notify =
-    function(msg, header, length, cType, source) -- cType, is 'server' or 'client', if applicable, header can be ussed as a title.
+    function(msg, header, length, cType, source) -- cType, is 'server' or 'client', if applicable, header can be ussed as a title. PLEASE CHANGE these are my notification setup
         if cType == 'client' then
-            return exports['vlrp-base']:Notify(msg, header, length)
+            return exports['qb-core']:Notify(msg, header, length)
         elseif cType == 'server' then
             if not source then
                 return print('[Debug] - Invalid Source Passed, make sure the player id is online.')
             end
-            return exports['vlrp-base']:Notify(source, msg, header, length)
+            return exports['qb-core']:Notify(source, msg, header, length)
         end
     end
