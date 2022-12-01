@@ -1,6 +1,5 @@
 VLRP = Settings.Main.Core
-PlayerData = nil
-local hasPaid = false
+PlayerData = VLRP.Functions.GetPlayerData() -- allows for restarting script live
 
 
 RegisterNetEvent('VLRP:Client:OnPlayerLoaded', function()
